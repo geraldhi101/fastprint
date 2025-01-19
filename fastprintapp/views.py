@@ -1,17 +1,22 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from .forms import TambahProduk
-from .models import Produk, Kategori, Status
+from .forms import ProdukForm
+from .models import Produk, Status
 
 # Create your views here.
 def index(request):
-    produk = Produk.objects.all()
-    kategori = Kategori.objects.all()
     status = Status.objects.all()
-    return render(request, 'index.html', {'produk':produk, 'kategori':kategori, 'status':status})
+    if request.GET.get('filter'):
+        produk_filter = request.GET.get('filter')
+        produk = Produk.objects.filter(status=produk_filter).order_by('id_produk')
+        return render(request, 'index.html', {'produk':produk, 'status':status})
+    else:
+        produk = Produk.objects.all().order_by('id_produk')
+        return render(request, 'index.html', {'produk':produk, 'status':status})
+        
 
 def tambah_produk(request):
-    form = TambahProduk(request.POST or None)
+    form = ProdukForm(request.POST or None)
     request.method = "POST"
     if form.is_valid():
         tambah_produk = form.save()
@@ -21,7 +26,7 @@ def tambah_produk(request):
 	
 def ubah_produk(request, pk):
     produk_saat = Produk.objects.get(id_produk=pk)
-    form = TambahProduk(request.POST or None, instance=produk_saat)
+    form = ProdukForm(request.POST or None, instance=produk_saat)
     if form.is_valid():
         form.save()
         messages.success(request, "Produk Berhasil Diubah...")
@@ -33,6 +38,3 @@ def hapus_produk(request, pk):
     hapus.delete()
     messages.success(request, "Produk berhasil Dihapus...")
     return redirect('index')
-
-
-
