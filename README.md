@@ -8,4 +8,4 @@
 
 ---
 
-Ingat <mark> <strong> Data Kategori dan Produk hanya bisa diisi lewat database </strong> </mark>.
+Ingat <mark> <strong> Data Kategori dan Status hanya bisa diisi lewat database </strong> </mark>.
