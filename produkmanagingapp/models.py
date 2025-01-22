@@ -13,11 +13,11 @@ class Kategori(models.Model):
     nama_kategori = models.CharField()
 
     def __str__(self):
-        return(f"{self.nama_kategori}")
+        return self.nama_kategori
 
 class Status(models.Model):
     id_status = models.AutoField(primary_key=True)
     nama_status = models.CharField()
 
     def __str__(self):
-        return(f"{self.nama_status}")
+        return self.nama_status

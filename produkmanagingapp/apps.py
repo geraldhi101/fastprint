@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class FastprintConfig(AppConfig):
+class ProdukManagingConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'fastprintapp'
+    name = 'produkmanagingapp'
