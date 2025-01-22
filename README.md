@@ -8,4 +8,4 @@
 
 ---
 
-## Data Kategori dan Produk hanya bisa diisi lewat database
+Ingat <mark> <strong> Data Kategori dan Produk hanya bisa diisi lewat database </strong> </mark>.
