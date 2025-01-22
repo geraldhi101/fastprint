@@ -1,5 +1,5 @@
 
-# Aplikasi web produk manajer dengan Django (Python) dengan PostgreSQL  
+# Aplikasi web produk manajer dengan Django (Python) dan PostgreSQL  
 
 1. Jalankan perintah `python manage.py makemigrations`  
 2. Jalankan peirntah `python manage.py migrate`  
