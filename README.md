@@ -1,5 +1,5 @@
 
-# Aplikasi web produk manajer dengan Django (Python) dan PostgreSQL  
+# Aplikasi produk manajer berbasis web dengan Django (Python) dan PostgreSQL  
 
 1. Pastikan telah berada dalam <strong> virtual environment </strong> seperti `venv` atau sejenisnya
 2. Jalankan perintah `python manage.py makemigrations`  
